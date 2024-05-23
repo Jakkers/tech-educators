@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.item1 {
+  width: 50px;
+  height: 50px;
+  background-color: coral;
+}
+
+.item2 {
+  width: 50px;
+  height: 50px;
+  background-color: purple;
+}
+
+.item3 {
+  width: 50px;
+  height: 50px;
+  background-color: darkslategrey;
+}
+
+.item4 {
+  width: 50px;
+  height: 50px;
+  background-color: darkcyan;
+}
+
+.item5 {
+  width: 50px;
+  height: 50px;
+  background-color: cyan;
+}
+
+.item6 {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}

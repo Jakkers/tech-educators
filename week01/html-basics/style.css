@@ -1,0 +1,115 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: darkslategrey;
+  color: antiquewhite;
+  box-sizing: border-box;
+}
+
+.nav-bar {
+  height: 130px;
+  padding: 5vw;
+  padding: 5vh;
+  position: fixed;
+}
+
+.main-starting-point {
+  padding-top: 130px;
+}
+
+h1 {
+  font-size: xx-large;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: x-large;
+}
+
+h3 {
+  font-size: large;
+  padding-top: 3vh;
+}
+
+.button {
+  background-color: chartreuse;
+  width: 100px;
+  color: darkslategray;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 16px;
+  padding-left: 16px;
+  border-radius: 32px;
+}
+
+button:active {
+  padding-top: 20px;
+}
+
+/* p :first-child {
+  font-weight: bold;
+  font-size: x-large;
+} */
+
+article-preview::first-letter {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.article-preview {
+  padding-top: 1vh;
+}
+
+/* img.rounded {
+  object-fit: cover;
+  border-radius: 5%;
+} */
+
+#header-3 {
+  font-weight: bold;
+  background-color: transparent;
+}
+
+#article-author {
+  font-size: small;
+}
+
+.article-block {
+  padding: 3vw;
+  padding: 3vh;
+  /* display: flex;
+  flex-direction: column; */
+  width: 400px;
+  height: fit-content;
+}
+
+/* pseudo class : */
+.article-block button:hover {
+  background-color: coral;
+}
+
+/* first-child only works if specific child or a specific child within a parent is selected */
+img:first-child {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.positioning-container h3 {
+  position: absolute;
+  top: 45%;
+  left: 40px;
+}
+
+.positioning-container {
+  position: relative;
+}
+
+.cookie-banner {
+  bottom: 40px;
+  position: fixed;
+  width: 100%;
+}
