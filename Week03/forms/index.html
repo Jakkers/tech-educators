@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>Forms</h1>
+    <!-- write a form to collect data from customers  -->
+    <form class="form-container" id="customer-form">
+      <!-- this input contains the customer name -->
+      <label for="customerName">Customer Name: </label>
+      <input type="text" id="customerName" name="customerName" />
+      <!-- this input contains the customer email  -->
+      <label for="customerEmail">Email: </label>
+      <input type="email" id="customerEmail" name="customerEmail" />
+      <!-- other tyes of input  -->
+      <label for="customerPassword">Password: </label>
+      <input type="password" id="customerPassword" name="customerPassword" />
+      <!-- select from options  -->
+      <label for="customerLanguage"> Language: </label>
+      <select name="customerLanguage" id="customerLanguage">
+        <option value="english">English</option>
+        <option value="spanish">Espanol</option>
+        <option value="mandarin">Mandarin</option>
+        <option value="french">French</option>
+      </select>
+      <!-- date  -->
+      <label for="birthDate">Date of birth: </label>
+      <input
+        type="date"
+        id="birthDate"
+        name="birthDate"
+        value="1975-01-01"
+        min="1900-01-01"
+        max="2024-06-03"
+      />
+      <!-- sumbit button  -->
+      <button type="submit">Submit</button>
+      <!-- boolean remember me tick box  -->
+      <label for="remember">Remember me: </label>
+      <input type="checkbox" name="remember" id="remember" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container {
+  padding: 3%;
+  width: 70vh;
+  height: 70vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-color: grey;
+  border-style: solid;
+  justify-content: space-evenly;
+}
+
+body {
+  margin: 30px;
+}
+
+button {
+  background-color: royalblue;
+  color: white;
+  border-width: 0px;
+  height: 40px;
+}

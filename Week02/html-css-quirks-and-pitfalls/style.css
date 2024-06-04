@@ -1,0 +1,29 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+* {
+  margin-bottom: 50px;
+}
+
+body {
+  background-color: #ccc;
+}
+
+.image-container {
+  background-color: #444;
+}
+
+.image-container img {
+  display: block;
+  padding: 30px;
+  width: 300px;
+  vertical-align: bottom;
+}
+
+.box1 {
+  margin-bottom: 50px;
+}
+
+.box2 {
+  margin-top: 50px;
+  overflow: hidden;
+}
