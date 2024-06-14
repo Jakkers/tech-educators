@@ -1,23 +1,40 @@
 import express from "express";
 import cors from "cors";
+import pg from "pg";
+import dotenv from "dotenv";
 
 const app = express();
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
+app.use(express.json());
+dotenv.config();
 
-app.use(express.json()); //ensure this is present so the server can understand JSON data
+const dbConnectionstring = process.env.DATABASE_URL;
 
-app.use(cors());
-
-const PORT = 7373;
-
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
+export const db = new pg.Pool({
+  connectionString: dbConnectionstring,
 });
 
-app.get("/", function (request, response) {
-  response.json({ status: "This is the root route, how roude!" });
+const port = 8383;
+app.listen(port, () => {
+  console.log(`Your server is running on port: ${port}`);
 });
 
-app.post("/messages", function (request, response) {
-  console.log("request.body", request.body);
-  response.json({ status: "message received!" });
+app.get("/", (req, res) => {
+  res.json({ message: "There are no bad root route jokes, only bad taste." });
+});
+
+app.get("/ramen", async (req, res) => {
+  const value = 240;
+  const result = await db.query(
+    `
+     SELECT * FROM ramen WHERE Time_To_Cook < $1 AND price < $2`,
+    [value, 2]
+  );
+  res.json(result.rows);
 });

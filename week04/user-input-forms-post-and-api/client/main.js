@@ -1,19 +1,33 @@
-const messageForm = document.querySelector("#messageForm");
+const form = document.getElementById("messageForm");
 
-function handleSubmitMessageForm(event) {
-  event.preventDefault();
-  console.log("Form submitted!");
-  //do something with the form data here
-  const formData = new FormData(messageForm);
-  const message = Object.fromEntries(formData);
+async function fetchAndRenderRamen() {
+  const response = await fetch("http://localhost/8383/ramen");
+  const ramenList = await response.json();
+  const ramenListDiv = document.getElementById("ramenList");
+  ramenListDiv.innerHTML = "";
 
-  fetch("http://localhost:7373/messages", {
-    method: "POST", // This is where we set the POST HTTP verb
-    headers: {
-      "Content-Type": "application/json", //This tells the server we're sebdubg stringified JSON data
-    },
-    body: JSON.stringify({ message }),
+  ramenList.forEach((ramen) => {
+    const ramenDiv = document.createElement("div");
+    ramenDiv.innerHTML = `<p>ID: ${ramen.id}, Flavour: ${ramen.flavour}, Price: ${ramen.price}, Spiciness: ${ramen.spiciness} Time To Cook: ${ramen.time_to_cook}</p>`;
+    ramenListDiv.appendChild(ramenDiv);
   });
 }
 
-messageForm.addEventListener("submit", handleSubmitMessageForm);
+fetchAndRenderRamen();
+
+form.addEventListener("submit", submitButton);
+
+function submitButton(event) {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+  const formValues = Object.fromEntries(formData);
+  fetch("http://localhost/8383/ramen", {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(formValues),
+  });
+  console.log(event);
+}
