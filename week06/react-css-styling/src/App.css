@@ -1,0 +1,6 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+:root {
+  --bg-colour: rgb(32, 17, 31);
+  --text-colour: rgb(226, 226, 226);
+}

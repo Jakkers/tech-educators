@@ -1,0 +1,5 @@
+.my-header {
+  background-color: var(--bg-colour);
+  color: var(--text-colour);
+  padding: 1rem;
+}
