@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useTimer() {
+export function useTimer() {
   console.log("useTimer hook called");
   const [count, setCount] = useState(0);
 
